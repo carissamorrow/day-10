@@ -11,7 +11,7 @@ export default class JobsController {
   showJobs() {
     let Jobs = _JobsService.getJobs()
     let template = `
-      <button class="btn btn-primary" onclick="">Clear Results</button>
+      <button class="btn btn-primary" onclick="app.controllers.JobsController.clearResults()">Clear Results</button>
     `
 
     Jobs.forEach(Jobs => {
@@ -23,6 +23,9 @@ export default class JobsController {
         </div>`
     })
     document.getElementById('main-content').innerHTML = template
+  }
+  clearResults() {
+    document.getElementById('main-content').innerHTML = '';
   }
 
   addJobs(event) {

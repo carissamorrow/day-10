@@ -12,7 +12,7 @@ export default class AutosController {
     console.log("autobots assemble")
     let autos = _autosService.getAutos()
     let template = `
-      <button class="btn btn-primary" onclick="">Clear Results</button>
+      <button class="btn btn-primary" onclick="app.controllers.autosController.clearResults()">Clear Results</button>
     `
 
     autos.forEach(auto => {
@@ -26,7 +26,9 @@ export default class AutosController {
     })
     document.getElementById('main-content').innerHTML = template
   }
-
+  clearResults() {
+    document.getElementById('main-content').innerHTML = '';
+  }
 
   addAuto(event) {
     event.preventDefault();//prevents page from reloading
@@ -44,4 +46,5 @@ export default class AutosController {
     this.showAutos()
     form.reset()
   }
+
 }
