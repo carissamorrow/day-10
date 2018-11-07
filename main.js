@@ -1,7 +1,7 @@
 class App {
   constructor() {
     this.controllers = {
-      // AutosController, 
+      autosController: new autosController
       // RealEstatesController,
       // JobsController
     }
