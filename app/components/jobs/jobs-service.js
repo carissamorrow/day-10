@@ -1,6 +1,6 @@
 import Jobs from "../../models/Jobs.js";
 
-let __Jobs = [
+let _Jobs = [
   new Jobs({
     type: "Construction",
     hours: "40 per week",
@@ -12,7 +12,7 @@ let __Jobs = [
   })
 ]
 
-export default class jobsService {
+export default class JobsService {
   addJobs(formData) {
     let newJobs = new Jobs(formData)
     _Jobs.push(newJobs)
