@@ -26,6 +26,17 @@
     Choose a category to start buying stuff
   </div>
 
+  <form onsubmit="app.controllers.autosController.addAuto(event)">
+    <input type="text" name="make">
+    <input type="text" name="model">
+    <input type="number" name="year">
+    <input type="number" name="miles">
+    <input type="number" name="price">
+    <textarea type="text" name="description"></textarea>
+    <input type="url" name="img">
+    <button type="submit">Add Auto</button>
+  </form>
+
   <script src="app/main.js" type="module"></script>
 
 </body>

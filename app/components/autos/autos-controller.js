@@ -25,4 +25,20 @@ export default class AutosController {
     document.getElementById('main-content').innerHTML = template
   }
 
+  addAuto(event) {
+    event.preventDefault();//prevents page from reloading
+    let form = event.target //element that triggers the event
+    let formData = {
+      make: form.make.value,
+      model: form.model.value,
+      year: form.year.value,
+      miles: form.miles.value,
+      price: form.price.value,
+      description: form.description.value,
+      img: form.img.value
+    }
+    _autosService.addAuto(formData)
+    this.showAutos()
+    form.reset()
+  }
 }
