@@ -1,7 +1,9 @@
+import AutosController from "./components/autos/AutosController.js";
+
 class App {
   constructor() {
     this.controllers = {
-      autosController: new autosController
+      autosController: new AutosController
       // RealEstatesController,
       // JobsController
     }
