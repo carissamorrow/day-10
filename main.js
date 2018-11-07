@@ -1,4 +1,4 @@
-import AutosController from "./components/autos/AutosController.js";
+import AutosController from "./components/autos/autos-controller.js";
 
 class App {
   constructor() {

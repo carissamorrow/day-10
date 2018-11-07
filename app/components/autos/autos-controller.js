@@ -13,6 +13,13 @@ export default class AutosController {
     let autos = _autosService.getAutos()
     let template = ""
 
+    autos.forEach(auto => {
+      template +=
+        `<div class="col card">
+        <img src="${auto.img}">
+        </div>`
+    })
+
   }
 
 }
