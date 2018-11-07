@@ -1,5 +1,5 @@
 export default class Auto {
-  constructor(make, model, year, miles, price, description, img) {
+  constructor({ make, model, year, miles, price, description, img }) {
     if (!make || !model || !year || !miles || !price || !description) {
       throw new Error("Invalid Auto Creation")
     }
