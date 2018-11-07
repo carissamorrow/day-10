@@ -47,6 +47,18 @@
     <button type="sumbit">Add House</button>
   </form>
 
+
+  <form onsubmit="app.controllers.JobsController.addJobs(event)">
+    <input type="text" name="type">
+    <input type="text" name="hours">
+    <input type="text" name="days">
+    <input type="text" name="requirements">
+    <input type="text" name="salary">
+    <textarea type="text" name="description"></textarea>
+    <input type="url" name="img">
+    <button type="sumbit">Look For Jobs</button>
+  </form>
+
   <script src="app/main.js" type="module"></script>
 
 </body>
