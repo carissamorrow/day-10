@@ -18,13 +18,11 @@
   <!--Mounting Points-->
   <div id="app">
     <button class="btn btn-primary" onclick="app.controllers.autosController.showAutos()">Autos</button>
-    <button class="btn btn-primary">Real Estate</button>
-    <button class="btn btn-primary">Jobs</button>
+    <button class="btn btn-primary" onclick="app.controllers.realestateController.showrealEstate()">Real Estate</button>
+    <button class="btn btn-primary" onclick="app.controllers.JobsController.showJobs()">Jobs</button>
   </div>
 
-  <div id="main-content">
-    Choose a category to start buying stuff
-  </div>
+
 
   <form onsubmit="app.controllers.autosController.addAuto(event)">
     <input type="text" name="make">
@@ -36,6 +34,7 @@
     <input type="url" name="img">
     <button type="submit">Add Auto</button>
   </form>
+
   <form onsubmit="app.controllers.realestateController.addrealEstate(event)">
     <input type="text" name="neighborhood">
     <input type="text" name="size">
@@ -58,6 +57,10 @@
     <input type="url" name="img">
     <button type="sumbit">Look For Jobs</button>
   </form>
+
+  <div id="main-content">
+    Choose a category to start buying stuff
+  </div>
 
   <script src="app/main.js" type="module"></script>
 

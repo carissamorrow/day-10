@@ -11,7 +11,9 @@ export default class AutosController {
   showAutos() {
     console.log("autobots assemble")
     let autos = _autosService.getAutos()
-    let template = ""
+    let template = `
+      <button class="btn btn-primary" onclick="">Clear Results</button>
+    `
 
     autos.forEach(auto => {
       template += `
@@ -24,6 +26,7 @@ export default class AutosController {
     })
     document.getElementById('main-content').innerHTML = template
   }
+
 
   addAuto(event) {
     event.preventDefault();//prevents page from reloading

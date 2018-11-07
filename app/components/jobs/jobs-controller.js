@@ -10,7 +10,9 @@ export default class JobsController {
 
   showJobs() {
     let Jobs = _JobsService.getJobs()
-    let template = ""
+    let template = `
+      <button class="btn btn-primary" onclick="">Clear Results</button>
+    `
 
     Jobs.forEach(Jobs => {
       template += `

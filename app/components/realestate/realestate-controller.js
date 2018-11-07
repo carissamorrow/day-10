@@ -10,7 +10,9 @@ export default class realEstateController {
 
   showrealEstate() {
     let realEstate = _realEstateService.getrealEstate()
-    let template = ""
+    let template = `
+      <button class="btn btn-primary" onclick="">Clear Results</button>
+    `
 
     realEstate.forEach(realEstate => {
       template += `
