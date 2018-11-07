@@ -5,7 +5,7 @@ let _autosService = new AutosService()
 
 export default class AutosController {
   constructor() {
-    console.log("DID IT WORK?")
+
   }
 
   showAutos() {
@@ -14,12 +14,15 @@ export default class AutosController {
     let template = ""
 
     autos.forEach(auto => {
-      template +=
-        `<div class="col card">
+      template += `
+        <div class="col card">
         <img src="${auto.img}">
+        <h5>${auto.make} - ${auto.model} - ${auto.year}</h5>
+        <p>Price:${auto.price}</p>
+        <p>Miles:${auto.miles}</p>
         </div>`
     })
-
+    document.getElementById('main-content').innerHTML = template
   }
 
 }
