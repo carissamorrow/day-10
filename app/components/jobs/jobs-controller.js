@@ -5,21 +5,19 @@ let _JobsService = new JobsService()
 
 export default class JobsController {
   constructor() {
-
+    _JobsService.getJobs(this.showJobs)
   }
 
   showJobs() {
-    let Jobs = _JobsService.getJobs()
+    let Jobs = _JobsService._Job
     let template = `
       <button class="btn btn-primary" onclick="app.controllers.JobsController.clearResults()">Clear Results</button>
     `
-
     Jobs.forEach(Jobs => {
       template += `
-        <div class="col card">
-        <img src="${Jobs.img}">
-        <h5>${Jobs.type} - ${Jobs.hours} - ${Jobs.days}</h5>
-        <p>Requirements:${Jobs.requirements}</p>
+        <div class="col-md-8 card">
+        <h5>${Jobs.company} - ${Jobs.jobTitle} - ${Jobs.hours}</h5>
+        <p>Rates:${Jobs.rate}</p>
         </div>`
     })
     document.getElementById('main-content').innerHTML = template
@@ -32,16 +30,16 @@ export default class JobsController {
     event.preventDefault();//prevents page from reloading
     let form = event.target //element that triggers the event
     let formData = {
-      type: form.type.value,
+      company: form.company.value,
+      jobTitle: form.jobTitle.value,
       hours: form.hours.value,
-      days: form.days.value,
-      requirements: form.requirements.value,
-      salary: form.salary.value,
-      description: form.description.value,
-      img: form.img.value
+      rate: form.rate.value,
+
     }
-    _JobsService.addJobs(formData)
-    this.showJobs()
+    _JobsService.addJobs(formData, this.showJobs)
     form.reset()
+  }
+  destroyAuto(id) {
+    _JobsService.destroyJobs(id, this.showJobs)
   }
 }
