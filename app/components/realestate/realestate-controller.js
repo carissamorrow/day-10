@@ -15,7 +15,7 @@ export default class realEstateController {
     `
     realEstate.forEach(realEstate => {
       template += `
-        <div class="col-4 card">
+        <div class="col-sm-3 card">
           <div class="">
         <img class="card-img-top" src="${realEstate.img}">
         <div class="card-body">

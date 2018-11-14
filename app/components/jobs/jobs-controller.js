@@ -15,7 +15,7 @@ export default class JobsController {
     `
     Jobs.forEach(Jobs => {
       template += `
-        <div class="col-md-8 card">
+        <div class="col-sm-3 card">
         <h5>${Jobs.company} - ${Jobs.jobTitle} - ${Jobs.hours}</h5>
         <p>Rates:${Jobs.rate}</p>
         </div>`

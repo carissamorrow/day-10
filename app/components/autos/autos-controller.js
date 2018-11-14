@@ -16,7 +16,7 @@ export default class AutosController {
     `
     autos.forEach(auto => {
       template += `
-        <div class="col-md-4 card">
+        <div class="col-sm-3 card">
           <div class="">
         <img class="card-img-top" src="${auto.imgUrl}">
         <div class="card-body">

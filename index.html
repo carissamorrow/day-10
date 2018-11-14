@@ -16,44 +16,58 @@
 
 <body>
   <!--Mounting Points-->
-  <div id="app">
-    <button class="btn btn-primary" onclick="app.controllers.autosController.showAutos()">Autos</button>
-    <button class="btn btn-primary" onclick="app.controllers.realestateController.showrealEstate()">Real Estate</button>
-    <button class="btn btn-primary" onclick="app.controllers.JobsController.showJobs()">Jobs</button>
-  </div>
+  <div class="container">
+    <div class="row" id="app">
+      <div class="col">
+        <button class="btn btn-primary" onclick="app.controllers.autosController.showAutos()">Autos</button>
+        <button class="btn btn-primary" onclick="app.controllers.realestateController.showrealEstate()">Real Estate</button>
+        <button class="btn btn-primary" onclick="app.controllers.JobsController.showJobs()">Jobs</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <form onsubmit class="numbers"="app.controllers.autosController.addAuto(event)">
+          <input type="text" name="make">
+          <input type="text" name="model">
+          <input type="number" name="year">
+          <input type="number" name="price">
+          <textarea type="text" name="description"></textarea>
+          <input type="url" name="imgUrl">
+          <button type="submit">Add Auto</button>
+        </form>
+      </div>
+    </div>
 
-  <form onsubmit class="numbers"="app.controllers.autosController.addAuto(event)">
-    <input type="text" name="make">
-    <input type="text" name="model">
-    <input type="number" name="year">
-    <input type="number" name="price">
-    <textarea type="text" name="description"></textarea>
-    <input type="url" name="imgUrl">
-    <button type="submit">Add Auto</button>
-  </form>
+    <div class="row">
+      <div class="col">
+        <form onsubmit class="numbers"="app.controllers.realestateController.addrealEstate(event)">
+          <input type="text" name="id">
+          <input type="text" name="bathrooms">
+          <input type="text" name="bedrooms">
+          <input type="text" name="price">
+          <textarea type="text" name="description"></textarea>
+          <input type="url" name="imgUrl">
+          <button type="submit">Add House</button>
+        </form>
+      </div>
+    </div>
 
-  <form onsubmit class="numbers"="app.controllers.realestateController.addrealEstate(event)">
-    <input type="text" name="id">
-    <input type="text" name="bathrooms">
-    <input type="text" name="bedrooms">
-    <input type="text" name="price">
-    <textarea type="text" name="description"></textarea>
-    <input type="url" name="imgUrl">
-    <button type="sumbit">Add House</button>
-  </form>
+    <div class="row">
+      <div class="col">
+        <form onsubmit class="numbers"="app.controllers.JobsController.addJobs(event)">
+          <input type="text" name="company">
+          <input type="text" name="jobTitle">
+          <input type="text" name="hours">
+          <input type="text" name="rate">
 
+          <button type="sumbit">Look For Jobs</button>
+        </form>
+      </div>
+    </div>
 
-  <form onsubmit class="numbers"="app.controllers.JobsController.addJobs(event)">
-    <input type="text" name="company">
-    <input type="text" name="jobTitle">
-    <input type="text" name="hours">
-    <input type="text" name="rate">
-
-    <button type="sumbit">Look For Jobs</button>
-  </form>
-
-  <div id="main-content">
-    CHOOSE A CATAGORY TO START YOUR PURCHASE/NEW JOB!
+    <div class="row" id="main-content">
+      CHOOSE A CATAGORY TO START YOUR PURCHASE/NEW JOB!
+    </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
