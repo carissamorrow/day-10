@@ -21,34 +21,34 @@ export default class AutosService {
       })
       .catch(handleError)
   }
-  addAuto(formData, fnToRunOnSuccess) {
+  addAuto(formData, showAutos) {
     //send formData to api server
     //wait for server to respond
     //when server responds, handle response
     if (!formData) {
       throw new Error("you must supply form data")
     }
-    if (typeof fnToRunOnSuccess != 'function') {
+    if (typeof showAutos != 'function') {
       throw new Error("You must supply a success function")
     }
 
     api.post('', formData)
       .then(res => {
         //tell me via a callback
-        this.getAutos(fnToRunOnSuccess)
+        this.getAutos(showAutos)
       })
       .catch(err => console.log(err))
 
   }
 
-  getAutos(fnToRunOnSuccess) {
-    if (typeof fnToRunOnSuccess != 'function') {
-      throw new Error("bad function")
-    }
+  getAutos(showAutos) {
+    // if (typeof fnToRunOnSuccess != 'function') {
+    //   throw new Error("bad function")
+    // }
 
     api.get('').then(res => {
       _autos = res.data.data.map(item => new Auto(item))
-      fnToRunOnSuccess()
+      showAutos()
     })
       .catch(err => console.log(err))
 

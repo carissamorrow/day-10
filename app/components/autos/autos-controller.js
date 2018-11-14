@@ -20,7 +20,7 @@ export default class AutosController {
           <div class="">
         <img class="card-img-top" src="${auto.imgUrl}">
         <div class="card-body">
-        <h5 class="card-title">${auto.make} - ${auto.model} - ${auto.year}</h5>
+        <h5 class="card-title">${auto.make} - ${auto.model} - ${auto.year} - ${auto.description}</h5>
          <div class="card-text">
         <p>Price:${auto.price}</p>
         </div>

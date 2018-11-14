@@ -24,8 +24,8 @@ export default class realEstateService {
   }
 
   addrealEstate(formData, fnToRunOnSuccess) {
-    let newrealEstate = new realEstate(formData)
-    _realestate.push(newrealEstate)
+    // let newrealEstate = new realEstate(formData)
+    // _realestate.push(newrealEstate)
     if (!formData) {
       throw new Error("you must supply form data")
     }
@@ -44,10 +44,11 @@ export default class realEstateService {
     if (typeof fnToRunOnSuccess != 'function') {
       throw new Error("bad function")
     }
-    api.get('').then(res => {
-      _realestate = res.data.data.map(item => new realEstate(item))
-      fnToRunOnSuccess()
-    })
+    api.get('')
+      .then(res => {
+        _realestate = res.data.data.map(item => new realEstate(item))
+        fnToRunOnSuccess()
+      })
       .catch(err => console.log(err))
 
   }
