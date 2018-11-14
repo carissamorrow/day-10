@@ -9,7 +9,7 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css">
 
 </head>
@@ -24,7 +24,7 @@
 
 
 
-  <form onsubmit="app.controllers.autosController.addAuto(event)">
+  <form onsubmit class="numbers"="app.controllers.autosController.addAuto(event)">
     <input type="text" name="make">
     <input type="text" name="model">
     <input type="number" name="year">
@@ -35,11 +35,10 @@
     <button type="submit">Add Auto</button>
   </form>
 
-  <form onsubmit="app.controllers.realestateController.addrealEstate(event)">
-    <input type="text" name="neighborhood">
-    <input type="text" name="size">
-    <input type="text" name="yearbuilt">
-    <input type="text" name="rooms">
+  <form onsubmit class="numbers"="app.controllers.realestateController.addrealEstate(event)">
+    <input type="text" name="id">
+    <input type="text" name="bathrooms">
+    <input type="text" name="bedrooms">
     <input type="text" name="price">
     <textarea type="text" name="description"></textarea>
     <input type="url" name="imgUrl">
@@ -47,7 +46,7 @@
   </form>
 
 
-  <form onsubmit="app.controllers.JobsController.addJobs(event)">
+  <form onsubmit class="numbers"="app.controllers.JobsController.addJobs(event)">
     <input type="text" name="type">
     <input type="text" name="hours">
     <input type="text" name="days">

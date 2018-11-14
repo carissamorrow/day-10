@@ -5,20 +5,22 @@ let api = axios.create({
   baseURL: "http://bcw-gregslist.herokuapp.com/api/cars"
 })
 
+/**@type {Array<Auto>} */
+let _autos = []
 
-let _autos = [
-  new Auto({
-    make: "Honda",
-    model: "Accord",
-    year: 1985,
-    id: "",
-    price: 1500,
-    description: "Like New *** Rebuilt Engine",
-    img: "https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/images/17q4/692997/2018-honda-accord-sport-15t-manual-review-car-and-driver-photo-698625-s-original.jpg"
-  })
-]
+
+function handleError(err) {
+  throw new Error(err)
+}
 
 export default class AutosService {
+  destroyAuto(id, showAutos) {
+    api.delete(id)
+      .then(res => {
+        this.getAutos(showAutos)
+      })
+      .catch(handleError)
+  }
   addAuto(formData, fnToRunOnSuccess) {
     //send formData to api server
     //wait for server to respond
@@ -32,19 +34,27 @@ export default class AutosService {
 
     api.post('', formData)
       .then(res => {
-        let newAuto = new Auto(res.data)
-        _autos.push(newAuto)
         //tell me via a callback
-        fnToRunOnSuccess()
+        this.getAutos(fnToRunOnSuccess)
       })
       .catch(err => console.log(err))
 
   }
 
-  getAutos() {
+  getAutos(fnToRunOnSuccess) {
+    if (typeof fnToRunOnSuccess != 'function') {
+      throw new Error("bad function")
+    }
+
     api.get('').then(res => {
       _autos = res.data.data.map(item => new Auto(item))
+      fnToRunOnSuccess()
+    })
+      .catch(err => console.log(err))
 
-    }).catch(err => console.log(err))
+  }
+  //sync call
+  get autos() {
+    return _autos
   }
 }

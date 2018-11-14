@@ -1,14 +1,14 @@
 export default class realEstate {
-  constructor({ neighborhood, size, yearbuilt, rooms, price, description, img }) {
-    if (!neighborhood || !size || !yearbuilt || !rooms || !price || !description) {
+  constructor({ _id, bathrooms, bedrooms, price, description, imgUrl }) {
+    if (!_id || !bathrooms || !bedrooms || !price || !description) {
       throw new Error("Invalid Auto Creation")
     }
-    this.neighborhood = neighborhood
-    this.size = size
-    this.yearbuilt = yearbuilt
-    this.rooms = rooms
+
+    this._id = _id
+    this.bathrooms = bathrooms
+    this.bedrooms = bedrooms
     this.price = price
     this.description = description
-    this.img = img
+    this.img = imgUrl
   }
 }
