@@ -21,7 +21,6 @@ export default class AutosController {
         <img src="${auto.img}">
         <h5>${auto.make} - ${auto.model} - ${auto.year}</h5>
         <p>Price:${auto.price}</p>
-        <p>Miles:${auto.miles}</p>
         </div>`
     })
     document.getElementById('main-content').innerHTML = template
@@ -37,13 +36,11 @@ export default class AutosController {
       make: form.make.value,
       model: form.model.value,
       year: form.year.value,
-      miles: form.miles.value,
       price: form.price.value,
       description: form.description.value,
-      img: form.img.value
+      imgUrl: form.imgUrl.value
     }
-    _autosService.addAuto(formData)
-    this.showAutos()
+    _autosService.addAuto(formData, this.showAutos)
     form.reset()
   }
 
